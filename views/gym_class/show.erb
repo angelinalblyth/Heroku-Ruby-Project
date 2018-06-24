@@ -1,0 +1,55 @@
+<h1 style="text-align:left; padding-left: 3%;"><%= @gym_class.title %></h1>
+
+
+<table>
+  <tr>
+    <th>Description</th>
+  </tr>
+
+  <tr>
+    <td><%= @gym_class.description %></td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+
+    <th>Teacher</th>
+    <th>Cost</th>
+    <th>Duration</th>
+    <th>Class Time</th>
+    <th>Capacity</th>
+
+  </tr>
+
+  <tr>
+
+    <td><%= @gym_class.teacher %></td>
+    <td>£<%= @gym_class.cost %></td>
+    <td><%= @gym_class.duration %> mins</td>
+    <td><%= @gym_class.class_time %></td>
+    <td><%= @gym_class.capacity %></td>
+
+  </tr>
+</table>
+
+<div class="show_member_btn">
+
+  <form  class ="show_member_form" action="/gym_classes/<%= @gym_class.id %>/edit">
+    <input class ="show_member_input" type="submit" value="Edit Class" class="boxing-buttons"/>
+  </form>
+
+  <form class ="show_member_form" method="post" action="/gym_classes/<%= @gym_class.id %>/delete">
+    <input class ="show_member_input" type="submit" value="Delete Class"/>
+  </form>
+
+  <!-- unsure if I will make 2 seperate files for both members and classes for this, or should they call on the same erb file to both book and view. -->
+  <form  class ="show_member_form" action="/gym_classes/<%= @gym_class.id %>/bookings">
+    <input class ="show_member_input" type="submit" value="View Members"/>
+  </form>
+
+  <form  class ="show_member_form" action="/gym_classes/<%= @gym_class.id %>/book_class">
+    <input class ="show_member_input" type="submit" value="Book Member"/>
+  </form>
+
+</div>

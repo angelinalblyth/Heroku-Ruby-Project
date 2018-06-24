@@ -1,0 +1,27 @@
+<div>
+
+  <h1>
+    <%= @members.first_name %> is booked in for -
+  </h1>
+  <table>
+    <tr>
+      <th>
+        Title
+      </th>
+      <th>
+        Time
+      </th>
+    </tr>
+    <% for gym_class in @gym_classes %>
+    <tr>
+      <td>
+        <%= gym_class.title %>
+      </td>
+      <td>
+        <%= gym_class.class_time %>
+      </td>
+
+    </tr>
+    <% end %>
+  </table>
+</div>
